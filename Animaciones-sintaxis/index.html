@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transformacion punto de origen</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial;
+        }
+
+        .container {
+            border: 1px solid red;
+            width: 100%;
+        }
+
+        .container:hover .cuadraro {
+            animation-play-state: paused;
+        }
+
+        .cuadraro {
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 20px;
+            border-radius: 50%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            /* transition: .3s; */
+            animation-name: cuadrado;
+            animation-duration: 2s;
+            /* animation-delay: 1s; */
+            animation-iteration-count: infinite;
+            animation-timing-function: ease;
+            /* animation-direction:reverse; */
+            animation-direction:alternate;
+            /* animation-iteration-count: 2; */
+            /* animation-fill-mode: forwards; */
+            /* animation-timing-function: ease-in; */
+            /* animation-timing-function: ease-out; */
+            /* animation-timing-function: ease-in-out; */
+            /* animation-timing-function: linear; */
+            /* animation-timing-function: cubic-bezier(1, 1, 1, 1); */
+            animation-timing-function: cubic-bezier(1, 1, 1, 1);
+            position: relative;
+        }
+
+        @keyframes cuadrado{
+            /* 0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            } */
+            
+            0% {
+            left: 0;
+            }
+            100% {
+            left: calc(100% - 220px);
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cuadraro">hola mundo!</div>
+    </div>
+</body>
+</html>

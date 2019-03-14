@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>transformacion rotacion</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+            font-family: Arial;
+            perspective: 200px;
+
+        }
+
+        .container {
+            border: 1px solid red;
+        }
+
+        .container:hover .cuadraro {
+            /* transform: scale(X, Y); */
+            /* transform: scale(1.5, 1); */
+            /* transform: scale(2, .5); */
+            transform: scale(.5, .5);
+        }
+
+        .cuadraro {
+            width: 200px;
+            height: 200px;
+            background: #7dc900;
+            margin: 20px;
+            transition: .3s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="cuadraro">hola mundo!</div>
+    </div>
+</body>
+</html>

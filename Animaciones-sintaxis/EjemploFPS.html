@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>¡LOS FPS SI IMPORTAN!</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-family: Arial;
+        }
+
+        .container {
+            border: 3px solid black;
+            width: 100%;
+        }
+
+        .cuadraro {
+            width: 100px;
+            height: 100px;
+            background: #7dc900;
+            border-radius: 50%;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+            animation-name: cuadrado;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-direction:alternate;
+            position: relative;
+        }
+
+        #cuadro1 {
+            animation-timing-function: steps(10);
+        }
+
+        #cuadro2 {
+            animation-timing-function: steps(30);
+        }
+
+        #cuadro3 {
+            animation-timing-function: steps(60);
+        }
+
+        #cuadro4 {
+            animation-timing-function: steps(90);
+        }
+
+        #cuadro5 {
+            animation-timing-function: steps(120);
+        }
+
+        @keyframes cuadrado{
+            0% {
+            left: 0;
+            }
+            100% {
+            left: calc(100% - 100px);
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="cuadro1" class="cuadraro">10FPS</div>
+        <div id="cuadro2" class="cuadraro">30FPS</div>
+        <div id="cuadro3" class="cuadraro">60FPS</div>
+        <div id="cuadro4" class="cuadraro">90FPS</div>
+        <div id="cuadro5" class="cuadraro">120FPS!</div>
+    </div>
+
+</body>
+</html>
