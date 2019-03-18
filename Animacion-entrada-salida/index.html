@@ -25,6 +25,7 @@
 			transition: 1s;
 			visibility: hidden;
 		}
+
 		.modal{
 			max-width:500px;
 			background-color: white;
@@ -33,6 +34,7 @@
 			position: relative;
 			transform: translateY(-2000px);
 		}
+
 		.botonera button{
 			font-size: 1.2em;
 			margin-right: 10px;
@@ -45,21 +47,27 @@
 			cursor: pointer;
 			transition: .3s;
 		}
+
 		button.agree{
 			background-color: #97c93e;
 		}
+
 		button.noagree{
 			background-color: #ff4842;
 		}
+
 		.botonera button.agree:hover{
 			background-color: #6d8f30;
 		}
+
 		.botonera button.noagree:hover{
 			background-color: #c73b36;
 		}
+
 		.botonera button:active{
 			transform: scale(.8);
 		}
+
 		.cuadrado{
 			height: 51px;
 			width: 130px;
@@ -79,9 +87,11 @@
 			cursor: pointer;
 			transition: .5s;
 		}
+
 		.cuadrado:hover{
 			border-color: white;
 		}
+
 		.equis{
 			width: 18px;
 			height: 18px;
@@ -91,26 +101,31 @@
 			transform: rotate(45deg);
 			cursor: pointer;
 		}
+
 		.equis .stick1,
 		.equis .stick2{
 			background-color: black;
 			position: absolute;
 			transition: .3s;
 		}
+
 		.equis .stick1{
 			width: 100%;
 			height: 5px;
 			top: calc(50% - 2.5px);
 		}
+
 		.equis .stick2{
 			width: 5px;
 			height: 100%;
 			left: calc(50% - 2.5px);
 		}
+
 		.equis:hover .stick1,
 		.equis:hover .stick2{
 			background-color: #ff4842;
 		}
+
 		.emoji{
 			width: 200px;
 			position: absolute;
@@ -118,6 +133,7 @@
 			left: calc(50% - 100px);
 			transform: translateY(-2000px);
 		}
+
 		.textdesp{
 			position: absolute;
 			top: calc(50% + 100px);
@@ -133,76 +149,37 @@
 		/********** ANIMACIONES **********/
 
 		@keyframes in{/*Animación de entrada del modal*/
-			0%{
-				transform: translateY(-2000px);
-			}
-			60%{
-				transform: translateY(30px);
-			}
-			75%{
-				transform: translateY(-45px);
-			}
-			90%{
-				transform: translateY(20px);
-			}
-			100%{
-				transform: translateY(0);	
-			}
+			0%{     transform: translateY(-2000px); }
+			60%{    transform: translateY(30px);    }
+			75%{    transform: translateY(-45px);   }
+			90%{    transform: translateY(20px);    }
+			100%{   transform: translateY(0);	    }
 		}
-		
+
 		@keyframes out{/*Animación de salida del modal*/
-			0%{
-				transform: translateY(0);	
-			}
-			10%{
-				transform: translateY(20px);
-			}
-			25%{
-				transform: translateY(-45px);
-			}
-			40%{
-				transform: translateY(30px);
-			}
-			100%{
-				transform: translateY(-2000px);
-			}
+			0%{     transform: translateY(0);	    }
+			10%{    transform: translateY(20px);    }
+			25%{    transform: translateY(-45px);   }
+			40%{    transform: translateY(30px);    }
+			100%{   transform: translateY(-2000px); }
 		}
 
 		@keyframes showEmoji{/*Animacion de llegada, rebote y salida de los emojis*/
-			0%{
-				transform: translateY(-2000px);
-			}
-			20%{
-				transform: translateY(100%);
-			}
-			30%{
-				transform: translateY(0px);
-			}
-			70%{
-				transform: translateY(0px);
-			}
-			80%{
-				transform: translateY(100%);	
-			}
-			100%{
-				transform: translateY(-2000px);
-			}
+			0%{		transform: translateY(-2000px);	}
+			20%{	transform: translateY(100%);	}
+			30%{	transform: translateY(0px);		}
+			70%{	transform: translateY(0px);		}
+			80%{	transform: translateY(100%);	}
+			100%{	transform: translateY(-2000px);	}
 		}
 		
 		@keyframes showText{/*Animación de entrada y salida del texto de los emojis*/
-			0%{
-				opacity: 0;
-			}
-			16.66%{
-				opacity: 1;
-			}
-			83.33%{
-				opacity: 1;
-			}
-			100%{
-				opacity: 0;
-			}
+			0%{		opacity: 0;	}
+			16.66%{	opacity: 1;	}
+			83.33%{	opacity: 1;	}
+			100%{	opacity: 0;	}
 		}
+
 	</style>
 </head>
 <body>
@@ -232,12 +209,15 @@
 	<script type="text/javascript">
 
 		/*********** DECLARACION DE LOS OBJETOS DEL DOM ***********/ 
-		const botonsi = document.getElementById("botonsi"); //boton de que si gusto
-		const botonno = document.getElementById("botonno"); //boton de que no gusto
-		const modal = document.getElementById("modal"); //el objeto modal
 		const overlay = document.getElementById("overlay"); //el objeto overlay
+		const modal = document.getElementById("modal"); //el objeto modal
+
 		const muestra = document.getElementById("botonAparece"); //boton para mostrar el modal
 		const close = document.getElementById("x"); //boton de equis, para ocultar el modal
+
+		const botonsi = document.getElementById("botonsi"); //boton de que si gusto
+		const botonno = document.getElementById("botonno"); //boton de que no gusto
+
 		const emojiHappy = document.getElementById("happy"); //el emoji feliz
 		const textHappy = document.getElementById("textB"); //el texto del emoji feliz
 		const emojiSad = document.getElementById("sad"); //el emoji triste
@@ -257,7 +237,7 @@
 			overlay.style.visibility = "hidden";
 			overlay.style.transitionDelay = "0s"; //se resetea la demora a cero para que no haya ningun atraso puesto que el emoji no saldrá.
 		}
-		
+
 		function show(){// muestra el modal y el overlay
 			modal.style.animation = 'in 1.5s forwards';
 			overlay.style.visibility = "visible";
@@ -271,7 +251,7 @@
 				textSad.style.animation ='';
 			}
 		}
-		
+
 		/*********** EVENTOS DE CLICK ***********/ 
 		muestra.addEventListener('click', show); //al hacer click, muestra el modal
 		close.addEventListener('click', hide); //al hacer click, oculta el modal
